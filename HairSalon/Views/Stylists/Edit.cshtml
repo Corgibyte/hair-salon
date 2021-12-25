@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers;
+
+@model HairSalon.Models.Stylist
+
+<h2>Edit</h2>
+
+<h4>Edit this stylist: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.StylistId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  <select asp-for="DayOff" asp-items="Html.GetEnumSelectList<DayOfWeek>()">
+  <option value="">Choose a day</option>
+</select>
+  <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to stylists", "Index")</p>
