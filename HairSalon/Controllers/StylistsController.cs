@@ -29,6 +29,7 @@ namespace HairSalon.Controllers
     public ActionResult Details(int id)
     {
       Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      ViewData["clients"] = _db.Clients.Where(client => client.StylistId == id).ToList();
       return View(thisStylist);
     }
 
@@ -72,6 +73,13 @@ namespace HairSalon.Controllers
       _db.Stylists.Remove(thisStylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public ActionResult ViewClients(int id)
+    {
+      List<Client> clients = _db.Clients.Where(client => client.StylistId == id).ToList();
+      ViewBag.StylistId = id;
+      return View(clients);
     }
   }
 }
