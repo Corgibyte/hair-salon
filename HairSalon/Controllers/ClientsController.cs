@@ -67,11 +67,6 @@ namespace HairSalon.Controllers
     public ActionResult DeleteConfirmed(int id)
     {
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-      List<Appointment> associatedAppts = _db.Appointments.Where(appt => appt.StylistId == id).ToList();
-      foreach (Appointment appt in associatedAppts)
-      {
-        _db.Appointments.Remove(appt);
-      }
       _db.Clients.Remove(thisClient);
       _db.SaveChanges();
       return RedirectToAction("Index");
