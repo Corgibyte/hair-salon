@@ -75,6 +75,11 @@ namespace HairSalon.Controllers
     {
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       _db.Clients.Remove(thisClient);
+      List<Appointment> associatedAppts = _db.Appointments.Where(appt => appt.StylistId == id).ToList();
+      foreach (Appointment appt in associatedAppts)
+      {
+        _db.Appointments.Remove(appt);
+      }
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
