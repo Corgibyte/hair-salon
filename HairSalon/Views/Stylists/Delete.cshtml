@@ -4,9 +4,12 @@
 <h3>This will also delete any associated clients and appointments</h3>
 
 <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete" />
-}
 
-<p>@Html.ActionLink("Back to stylist", "Details", new { id = Model.StylistId })</p>
+<div class="btn-group-vertical">
+  @using (Html.BeginForm())
+  {
+    <button class="btn btn-input" type="submit">Delete stylist</button>
+  }
+
+  @Html.ActionLink("Back to stylist", "Details", new { id = Model.StylistId }, new { @role="button", @class="btn" })
+</div>

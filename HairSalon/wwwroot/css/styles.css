@@ -33,7 +33,7 @@ a:visited {
 }
 
 .btn {
-  color:var(--aurora-01);
+  color:var(--aurora-02);
   background-color: var(--third-bg-color);
   border:1px black solid;
   border-radius:0px;
@@ -54,5 +54,11 @@ a:visited {
   border:1px black solid;
   border-radius:5px;
   max-width: 600px;
-  padding:1rem 1rem 0 1rem;
+  padding:1rem 1rem 1rem 1rem;
+}
+
+input[type="text"], input[type="textarea"], input[type="datetime-local"], input[type="email"] {
+  background-color: var(--third-bg-color);
+  color: var(--medium-white);
+  margin:0.25rem;
 }
