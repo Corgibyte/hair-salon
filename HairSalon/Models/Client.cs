@@ -13,6 +13,7 @@ namespace HairSalon.Models
 
     public Client()
     {
+      this.Appointments = new HashSet<Appointment>();
     }
   }
 }

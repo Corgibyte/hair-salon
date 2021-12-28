@@ -12,6 +12,7 @@ namespace HairSalon.Models
     public Stylist()
     {
       this.Clients = new HashSet<Client>();
+      this.Appointments = new HashSet<Appointment>();
     }
   }
 }
