@@ -50,5 +50,20 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Details", new { id = appointment.AppointmentId });
     }
+
+    public ActionResult Delete(int id)
+    {
+      Appointment thisAppt = _db.Appointments.FirstOrDefault(appt => appt.AppointmentId == id);
+      return View(thisAppt);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Appointment thisAppt = _db.Appointments.FirstOrDefault(appt => appt.AppointmentId == id);
+      _db.Appointments.Remove(thisAppt);
+      _db.SaveChanges();
+      return RedirectToAction("Details", "Clients", new { id = thisAppt.ClientId });
+    }
   }
 }
