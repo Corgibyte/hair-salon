@@ -51,7 +51,11 @@ This is a web application that showcases my ability to develop a robust ASP.NET 
 
 ### Known bugs:
 
-None at current time
+* All sorts of errors if you send in empty data. Does not have data validation anywhere.
+
+### TODO
+
+* Data validation
 
 ### License
 
