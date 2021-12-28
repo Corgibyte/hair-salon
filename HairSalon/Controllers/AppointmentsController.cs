@@ -16,6 +16,12 @@ namespace HairSalon.Controllers
       _db = db;
     }
 
+    public ActionResult Index()
+    {
+      List<Appointment> model = _db.Appointments.Include(appt => appt.Client).Include(appt => appt.Stylist).ToList();
+      return View(model);
+    }
+
     public ActionResult Create()
     {
       ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "Name");
@@ -25,6 +31,7 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Create(Appointment appointment)
     {
+      appointment.StylistId = _db.Clients.FirstOrDefault(client => client.ClientId == appointment.ClientId).Stylist.StylistId;
       _db.Appointments.Add(appointment);
       _db.SaveChanges();
       return RedirectToAction("ViewAppts", "Clients", new { id = appointment.ClientId });
