@@ -1,0 +1,44 @@
+:root {
+  --main-bg-color: #2E3440;
+  --second-bg-color: #3B4252;
+  --third-bg-color: #4C566A;
+  --bright-white: #ECEFF4;
+  --medium-white: #E5E9F0;
+  --low-white: #D8DEE9;
+  --frost-01: #8FBCBB;
+  --frost-02: #88C0D0;
+  --frost-03: #81A1C1;
+  --frost-04: #5E81AC;
+  --aurora-01: #BF616A;
+  --aurora-02: #D08770;
+  --aurora-03: #EBCB8B;
+}
+
+body {
+  background: var(--main-bg-color);
+  color: var(--low-white);
+}
+
+
+a:link {
+  color: var(--aurora-01);
+}
+
+a:hover {
+  color:var(--aurora-03);
+}
+
+a:visited {
+  color:var(--aurora-02);
+}
+
+.btn {
+  background-color: var(--third-bg-color);
+  border:1px black solid;
+  border-radius:5px;
+}
+
+.btn:hover {
+  background-color: var(--second-bg-color);
+  color: var(--aurora-03);
+}
