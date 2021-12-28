@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace HairSalon.Models
 {
@@ -7,7 +9,8 @@ namespace HairSalon.Models
     public int AppointmentId { get; set; }
     public int StylistId { get; set; }
     public int ClientId { get; set; }
-    public DateTime DateTime { get; set; }
+    [BindProperty, DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm}", ApplyFormatInEditMode = true)]
+    public DateTime? DateTime { get; set; }
     public int Duration { get; set; }
     public string Notes { get; set; }
     public virtual Stylist Stylist { get; set; }
