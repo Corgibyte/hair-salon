@@ -1,0 +1,11 @@
+@model HairSalon.Models.Appointment
+
+<h2>Appointment Details</h2>
+<hr />
+<h3>Appointment for @Html.DisplayFor(model => model.Stylist.Name) with @Html.DisplayFor(model => model.Client.Name)</h3>
+
+<h4>Appoint at @Html.DisplayFor(model => model.DateTime) for @Html.DisplayFor(model => model.Duration) minutes</h4>
+
+<p>@Html.DisplayFor(model => model.Notes)</p>
+
+</p>@Html.ActionLink("Back to client appointments", "ViewAppts", "Clients", new { id = Model.ClientId })</p>

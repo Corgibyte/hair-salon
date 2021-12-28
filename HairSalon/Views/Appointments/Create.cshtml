@@ -1,7 +1,3 @@
-@{
-  Layout = "_Layout";
-}
-
 @model HairSalon.Models.Appointment
 
 <h4>Add a new appointment</h4>
@@ -15,7 +11,10 @@
   @Html.TextAreaFor(model => model.Notes)
 
   @Html.LabelFor(model => model.Duration)
-  @Html.TextBoxFor(model => model.Duration)
+  @Html.EditorFor(model => model.Duration)
+
+  @Html.LabelFor(model => model.TotalBill)
+  @Html.EditorFor(model => model.TotalBill)
 
   <input class="form-controller" asp-for="DateTime" />
   <button type="submit">Add Appointment</button>
