@@ -12,7 +12,9 @@
 <body>
   <div class="container">
     @await Html.PartialAsync("Header")
-    @RenderBody()
+    <div class="mainPane">
+      @RenderBody()
+    </div>
   </div>
 </body>
 

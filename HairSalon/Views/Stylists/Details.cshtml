@@ -4,8 +4,8 @@
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
-<p>@Html.ActionLink("See clients for this stylist", "ViewClients", new { id = Model.StylistId })</p>
-
-<p>@Html.ActionLink("Edit stylist", "Edit", new { id = Model.StylistId })</p>
-<p>@Html.ActionLink("Delete stylist", "Delete", new { id = Model.StylistId })</p>
-<p>@Html.ActionLink("Back to stylists", "Index")</p>
+<div class="btn-group-vertical" role="group">
+  <p>@Html.ActionLink("See clients for this stylist", "ViewClients", new { id = Model.StylistId }, new { @role="button", @class="btn" })</p>
+  <p>@Html.ActionLink("Edit stylist", "Edit", new { id = Model.StylistId }, new { @role="button", @class="btn" })</p>
+  <p>@Html.ActionLink("Delete stylist", "Delete", new { id = Model.StylistId }, new { @role="button", @class="btn" })</p>
+</div>

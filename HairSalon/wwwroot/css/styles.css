@@ -21,7 +21,7 @@ body {
 
 
 a:link {
-  color: var(--aurora-01);
+  color: var(--aurora-02);
 }
 
 a:hover {
@@ -33,12 +33,26 @@ a:visited {
 }
 
 .btn {
+  color:var(--aurora-01);
   background-color: var(--third-bg-color);
   border:1px black solid;
-  border-radius:5px;
+  border-radius:0px;
+  position:relative;
+}
+
+.btn-input {
+  margin:1rem;
 }
 
 .btn:hover {
   background-color: var(--second-bg-color);
   color: var(--aurora-03);
+}
+
+.mainPane {
+  background: var(--second-bg-color);
+  border:1px black solid;
+  border-radius:5px;
+  max-width: 600px;
+  padding:1rem 1rem 0 1rem;
 }
