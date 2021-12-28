@@ -35,5 +35,20 @@ namespace HairSalon.Controllers
       Appointment thisAppt = _db.Appointments.FirstOrDefault(appt => appt.AppointmentId == id);
       return View(thisAppt);
     }
+
+    public ActionResult Edit(int id)
+    {
+      ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "Name");
+      Appointment thisAppt = _db.Appointments.FirstOrDefault(appt => appt.AppointmentId == id);
+      return View(thisAppt);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Appointment appointment)
+    {
+      _db.Entry(appointment).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = appointment.AppointmentId });
+    }
   }
 }

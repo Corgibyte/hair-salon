@@ -1,0 +1,27 @@
+@model HairSalon.Models.Appointment
+
+<h2>Edit Appointment</h2>
+
+<h4>Edit appoint for @Html.DisplayFor(model => model.Stylist.Name) with @Html.DisplayFor(model => model.Client.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.AppointmentId)
+
+  @Html.LabelFor(model => model.Client)
+  @Html.DropDownList("ClientId")
+
+  @Html.LabelFor(model => model.Notes)
+  @Html.TextAreaFor(model => model.Notes)
+
+  @Html.LabelFor(model => model.Duration)
+  @Html.EditorFor(model => model.Duration)
+
+  @Html.LabelFor(model => model.TotalBill)
+  @Html.EditorFor(model => model.TotalBill)
+
+  <input class="form-controller" asp-for="DateTime" />
+  <button type="submit">Update Appointment</button>
+}
+
+<p>@Html.ActionLink("Back to appointment", "Details", new { id = Model.AppointmentId })</p>

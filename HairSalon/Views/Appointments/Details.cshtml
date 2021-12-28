@@ -8,4 +8,6 @@
 
 <p>@Html.DisplayFor(model => model.Notes)</p>
 
-</p>@Html.ActionLink("Back to client appointments", "ViewAppts", "Clients", new { id = Model.ClientId })</p>
+<p>@Html.ActionLink("Back to client appointments", "ViewAppts", "Clients", new { id = Model.ClientId })</p>
+<p>@Html.ActionLink("Edit appointment", "Edit", new { id = Model.AppointmentId })</p>
+<p>@Html.ActionLink("Delete appointment", "Delete", new { id = Model.AppointmentId })</p>
