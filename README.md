@@ -1,8 +1,10 @@
-## Eau Claire's Salon Stylist and Client Management System
+![Screenshot of Running Website](/screenshot.png)
+
+## Eau Claire's Salon Stylist Management System
 
 By Hannah Young
 
-A simple web application to allow a salon owner to manage stylists and their clients.
+A simple web application to allow a salon owner to manage their stylists and clients.
 
 ### Technologies Used
 
