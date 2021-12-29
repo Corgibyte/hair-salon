@@ -2,12 +2,13 @@
 @model List<HairSalon.Models.Stylist>
 
 <h1>Stylists</h1>
-
+<hr />
 <ul>
   @foreach (Stylist stylist in Model)
   {
     <li>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })</li>
   }
 </ul>
+<hr />
 
 @Html.ActionLink("Add new stylist", "Create", new { }, new { @role="button", @class="btn" })

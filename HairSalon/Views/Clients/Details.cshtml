@@ -5,7 +5,7 @@
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
 <div class="btn-group-vertical">
-  <p>@Html.ActionLink("View appointments", "ViewAppts", new { id = Model.ClientId }, new { @role="button", @class="btn" })</p>
-  <p>@Html.ActionLink("Edit client", "Edit", new { id = Model.ClientId }, new { @role="button", @class="btn" })</p>
-  <p>@Html.ActionLink("Delete client", "Delete", new { id = Model.ClientId }, new { @role="button", @class="btn" })</p>
+  @Html.ActionLink("View appointments", "ViewAppts", new { id = Model.ClientId }, new { @role="button", @class="btn" })
+  @Html.ActionLink("Edit client", "Edit", new { id = Model.ClientId }, new { @role="button", @class="btn" })
+  @Html.ActionLink("Delete client", "Delete", new { id = Model.ClientId }, new { @role="button", @class="btn" })
 </div>

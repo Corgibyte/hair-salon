@@ -4,10 +4,13 @@
 <hr />
 <h3>Appointment for @Html.DisplayFor(model => model.Client.Stylist.Name) with @Html.DisplayFor(model => model.Client.Name)</h3>
 
-<h4>Appointment at @Html.DisplayFor(model => model.DateTime) for @Html.DisplayFor(model => model.Duration) minutes</h4>
+<h3>Appointment at @Html.DisplayFor(model => model.DateTime) for @Html.DisplayFor(model => model.Duration) minutes</h3>
 
-<p>@Html.DisplayFor(model => model.Notes)</p>
+<h3><em>@Html.DisplayNameFor(model => model.Notes):</em> @Html.DisplayFor(model => model.Notes)</h3>
+<hr />
 
-<p>@Html.ActionLink("Back to client appointments", "ViewAppts", "Clients", new { id = Model.ClientId })</p>
-<p>@Html.ActionLink("Edit appointment", "Edit", new { id = Model.AppointmentId })</p>
-<p>@Html.ActionLink("Delete appointment", "Delete", new { id = Model.AppointmentId })</p>
+<div class="btn-group-vertical">
+  @Html.ActionLink("Back to client appointments", "ViewAppts", "Clients", new { id = Model.ClientId }, new { @role="button", @class="btn" })
+  @Html.ActionLink("Edit appointment", "Edit", new { id = Model.AppointmentId }, new { @role="button", @class="btn" })
+  @Html.ActionLink("Delete appointment", "Delete", new { id = Model.AppointmentId }, new { @role="button", @class="btn" })
+</div>

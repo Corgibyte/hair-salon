@@ -1,21 +1,21 @@
 @model HairSalon.Models.Appointment
 
-<h4>Add a new appointment</h4>
+<h2>Add a new appointment</h2>
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Client)
-  @Html.DropDownList("ClientId")
+  @Html.LabelFor(model => model.Client, new {@class = "form-label"})
+  @Html.DropDownList("ClientId", null, "--Client--", new {@class = "form-control form-select"})
 
-  @Html.LabelFor(model => model.Notes)
-  @Html.TextAreaFor(model => model.Notes)
+  @Html.LabelFor(model => model.Notes, new {@class = "form-label"})
+  @Html.TextAreaFor(model => model.Notes, new {@class = "form-control"})
 
-  @Html.LabelFor(model => model.Duration)
-  @Html.EditorFor(model => model.Duration)
+  @Html.LabelFor(model => model.Duration, new {@class = "form-label"})
+  @Html.EditorFor(model => model.Duration, new {@class = "form-control"})
 
-  @Html.LabelFor(model => model.TotalBill)
-  @Html.EditorFor(model => model.TotalBill)
+  @Html.LabelFor(model => model.TotalBill, new {@class = "form-label"})
+  @Html.EditorFor(model => model.TotalBill, new {@class = "form-control"})
 
-  <input class="form-controller" asp-for="DateTime" />
-  <button type="submit">Add Appointment</button>
+  <input class="form-control" asp-for="DateTime" />
+  <button type="submit" class="btn">Add Appointment</button>
 }

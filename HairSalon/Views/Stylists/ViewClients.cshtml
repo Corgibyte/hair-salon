@@ -13,6 +13,6 @@
 </ul>
 
 <div class="btn-group-vertical" role="group">
-  <p>@Html.ActionLink("Add client", "Create", "Clients", new { }, new { @role="button", @class="btn" })</p>
-  <p>@Html.ActionLink("Back to stylist", "Details", new { id = ViewBag.StylistId }, new { @role="button", @class="btn" })</p>
+  @Html.ActionLink("Add client", "Create", "Clients", new { }, new { @role="button", @class="btn" })
+  @Html.ActionLink("Back to stylist", "Details", new { id = ViewBag.StylistId }, new { @role="button", @class="btn" })
 </div>

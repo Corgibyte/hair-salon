@@ -4,10 +4,10 @@
 <h6>This will also delete any associated appointments</h6>
 
 <div class="innerPane">
-  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+  <h2>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
   @using (Html.BeginForm())
   {
     <button class="btn btn-input" type="submit">Delete client</button>
   }
 </div>
-<p>@Html.ActionLink("Back to client", "Details", new { id = Model.ClientId }, new { @role="button", @class="btn" })</p>
+@Html.ActionLink("Back to client", "Details", new { id = Model.ClientId }, new { @role="button", @class="btn" })
