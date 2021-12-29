@@ -84,6 +84,7 @@ namespace HairSalon.Controllers
     {
       List<Client> clients = _db.Clients.Where(client => client.StylistId == id).ToList();
       ViewBag.StylistId = id;
+      ViewBag.StylistName = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id).Name;
       return View(clients);
     }
   }

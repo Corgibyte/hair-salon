@@ -1,6 +1,8 @@
 @using HairSalon.Models
 @model List<HairSalon.Models.Client>
 
+<h3>Clients for @ViewBag.StylistName:</h3>
+
 @if (Model.Count == 0)
 {
   <h5>No clients for this stylist</h5>
