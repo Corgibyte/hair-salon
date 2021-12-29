@@ -9,6 +9,6 @@
   @Html.HiddenFor(model => model.StylistId)
 
   @Html.LabelFor(model => model.Name, new {@class = "form-label"})
-  @Html.EditorFor(model => model.Name, new {@class = "form-control"})
+  @Html.EditorFor(model => model.Name, new { htmlAttributes = new {@class = "form-control"}})
   <button class="btn btn-input" type="submit">Edit stylist</button>
 }

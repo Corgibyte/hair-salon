@@ -10,7 +10,7 @@
 <hr />
 
 <div class="btn-group-vertical">
-  @Html.ActionLink("Back to client appointments", "ViewAppts", "Clients", new { id = Model.ClientId }, new { @role="button", @class="btn" })
+  @Html.ActionLink("To client appointments", "ViewAppts", "Clients", new { id = Model.ClientId }, new { @role="button", @class="btn" })
   @Html.ActionLink("Edit appointment", "Edit", new { id = Model.AppointmentId }, new { @role="button", @class="btn" })
   @Html.ActionLink("Delete appointment", "Delete", new { id = Model.AppointmentId }, new { @role="button", @class="btn" })
 </div>

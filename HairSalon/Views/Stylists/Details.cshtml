@@ -3,6 +3,7 @@
 <h2>Stylist Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<hr />
 
 <div class="btn-group-vertical" role="group">
   @Html.ActionLink("See clients for this stylist", "ViewClients", new { id = Model.StylistId }, new { @role="button", @class="btn" })

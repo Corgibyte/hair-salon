@@ -11,11 +11,11 @@
   @Html.TextAreaFor(model => model.Notes, new {@class = "form-control"})
 
   @Html.LabelFor(model => model.Duration, new {@class = "form-label"})
-  @Html.EditorFor(model => model.Duration, new {@class = "form-control"})
+  @Html.EditorFor(model => model.Duration, new { htmlAttributes = new {@class = "form-control"}})
 
   @Html.LabelFor(model => model.TotalBill, new {@class = "form-label"})
-  @Html.EditorFor(model => model.TotalBill, new {@class = "form-control"})
-  <input class="form-controller" asp-for="DateTime" /><br>
+  @Html.EditorFor(model => model.TotalBill, new { htmlAttributes = new {@class = "form-control"}})
+  <input class="form-control" asp-for="DateTime" /><br>
   <button type="submit" class="btn btn-input">Update Appointment</button>
 }
 <hr />
