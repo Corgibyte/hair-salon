@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace HairSalon.Models
@@ -16,6 +17,20 @@ namespace HairSalon.Models
     {
       this.Clients = new HashSet<Client>();
       this.Appointments = new HashSet<Appointment>();
+    }
+
+    public bool IsApptAvailable(DateTime beginDateTime, DateTime endDateTime)
+    {
+      foreach (Appointment appt in Appointments)
+      {
+        TimeSpan thisSpan = new TimeSpan(0, appt.Duration, 0);
+        DateTime apptEnd = appt.DateTime + thisSpan;
+        if (appt.DateTime <= endDateTime && apptEnd >= beginDateTime)
+        {
+          return false;
+        }
+      }
+      return true;
     }
   }
 }

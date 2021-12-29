@@ -14,7 +14,7 @@ namespace HairSalon.Models
 
     [BindProperty, DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm}", ApplyFormatInEditMode = true)]
 
-    public DateTime? DateTime { get; set; }
+    public DateTime DateTime { get; set; }
 
     public int Duration { get; set; }
 

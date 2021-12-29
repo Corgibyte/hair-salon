@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using HairSalon.Models;
@@ -32,9 +33,23 @@ namespace HairSalon.Controllers
     public ActionResult Create(Appointment appointment)
     {
       appointment.StylistId = _db.Clients.FirstOrDefault(client => client.ClientId == appointment.ClientId).Stylist.StylistId;
-      _db.Appointments.Add(appointment);
-      _db.SaveChanges();
-      return RedirectToAction("ViewAppts", "Clients", new { id = appointment.ClientId });
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == appointment.StylistId);
+      DateTime endDateTime = appointment.DateTime + new TimeSpan(0, appointment.Duration, 0);
+      if (thisStylist.IsApptAvailable(appointment.DateTime, endDateTime))
+      {
+        _db.Appointments.Add(appointment);
+        _db.SaveChanges();
+        return RedirectToAction("ViewAppts", "Clients", new { id = appointment.ClientId });
+      }
+      else
+      {
+        return RedirectToAction("CreateError");
+      }
+    }
+
+    public ActionResult CreateError()
+    {
+      return View();
     }
 
     public ActionResult Details(int id)
