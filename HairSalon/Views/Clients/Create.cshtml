@@ -4,16 +4,14 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.Name, new {@class = "form-label"})
+  @Html.TextBoxFor(model => model.Name, new {@class = "form-control"})
 
-  @Html.LabelFor(model => model.Email)
-  @Html.TextBoxFor(model => model.Email)
+  @Html.LabelFor(model => model.Email, new {@class = "form-label"})
+  @Html.TextBoxFor(model => model.Email, new {@class = "form-control"})
 
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
+  @Html.LabelFor(model => model.Stylist, new {@class = "form-label"})
+  @Html.DropDownList("StylistId", null, "--Client's Stylist--", new {@class = "form-control form-select"})
 
-    <input type="submit" value="Add new client" />
+  <button class="btn btn-input" type="submit">Add new client</button>
 }
-
-<p>@Html.ActionLink("Back to clients", "Index")</p>

@@ -1,12 +1,13 @@
 @model HairSalon.Models.Client
 
 <h2>Are you sure you want to delete this client?</h2>
-<h3>This will also delete any associated appointments</h3>
+<h6>This will also delete any associated appointments</h6>
 
-<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete" />
-}
-
-<p>@Html.ActionLink("Back to client", "Details", new { id = Model.ClientId })</p>
+<div class="innerPane">
+  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+  @using (Html.BeginForm())
+  {
+    <button class="btn btn-input" type="submit">Delete client</button>
+  }
+</div>
+<p>@Html.ActionLink("Back to client", "Details", new { id = Model.ClientId }, new { @role="button", @class="btn" })</p>

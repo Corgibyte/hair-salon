@@ -8,16 +8,16 @@
 {
   @Html.HiddenFor(model => model.ClientId)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
+  @Html.LabelFor(model => model.Name, new { @class = "form-label"})
+  @Html.EditorFor(model => model.Name, new { htmlAttributes = new {@class = "form-control"}})
 
-  @Html.LabelFor(model => model.Email)
-  @Html.EditorFor(model => model.Email)
+  @Html.LabelFor(model => model.Email, new { @class = "form-label"})
+  @Html.EditorFor(model => model.Email, new { htmlAttributes = new {@class = "form-control"}})
 
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
+  @Html.LabelFor(model => model.Stylist, new {@class = "form-label"})
+  @Html.DropDownList("StylistId", null, "--Client's Stylist--", new {@class = "form-control form-select"})
 
-  <input type="submit" value="Save" />
+  <button class="btn btn-input" type="submit">Save changes</button>
 }
 
-<p>@Html.ActionLink("Back to clients", "Index")</p>
+@Html.ActionLink("Return to client", "Details", new { id = Model.ClientId }, new {@role = "button", @class = "btn"})

@@ -15,5 +15,4 @@
   }
 </ul>
 
-<p>@Html.ActionLink("New appointment", "Create", "Appointments")</p>
-<p>@Html.ActionLink("Back to client", "Details", new { id = ViewBag.ClientId })</p>
+@Html.ActionLink("New appointment", "Create", "Appointments", new { }, new { @role="button", @class="btn"})
