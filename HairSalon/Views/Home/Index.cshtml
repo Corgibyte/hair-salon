@@ -1,4 +1,6 @@
 <h1>Corgibyte Hair Salon Management System</h1>
-<p>@Html.ActionLink("See all stylists", "Index", "Stylists")</p>
-<p>@Html.ActionLink("See all clients", "Index", "Clients")</p>
-<p>@Html.ActionLink("See all appointments", "Index", "Appointments")</p>
+<div class="btn-group">
+  @Html.ActionLink("See all stylists", "Index", "Stylists",new { }, new { @role="button", @class="btn" })
+  @Html.ActionLink("See all clients", "Index", "Clients",new { }, new { @role="button", @class="btn" })
+  @Html.ActionLink("See all appointments", "Index", "Appointments",new { }, new { @role="button", @class="btn" })
+</div>
