@@ -1,0 +1,21 @@
+@using HairSalon.Models
+@model List<HairSalon.Models.Appointment>
+
+<h3>All appointments for @ViewBag.StylistName:</h3>
+
+@if (Model.Count == 0)
+{
+  <h5>No appointments for this stylist</h5>
+}
+
+<ul>
+  @foreach (Appointment appt in Model)
+  {
+    <li>@Html.ActionLink($"{appt.DateTime:yyyy-MM-dd HH:mm} with {appt.Client.Name}", "Details", "Appointments", new { id = appt.AppointmentId })</li>
+  }
+</ul>
+
+<div class="btn-group-vertical">
+  @Html.ActionLink("New appointment", "Create", "Appointments", new { }, new { @role="button", @class="btn"})
+  @Html.ActionLink("Back to stylist", "Details", new { id = ViewBag.StylistId }, new { @role="button", @class="btn"})
+</div>

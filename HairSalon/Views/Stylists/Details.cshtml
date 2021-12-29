@@ -7,6 +7,7 @@
 
 <div class="btn-group-vertical" role="group">
   @Html.ActionLink("See clients for this stylist", "ViewClients", new { id = Model.StylistId }, new { @role="button", @class="btn" })
+  @Html.ActionLink("See appointments for this stylist", "ViewAppts", new { id = Model.StylistId }, new { @role="button", @class="btn" })
   @Html.ActionLink("Edit stylist", "Edit", new { id = Model.StylistId }, new { @role="button", @class="btn" })
   @Html.ActionLink("Delete stylist", "Delete", new { id = Model.StylistId }, new { @role="button", @class="btn" })
 </div>
